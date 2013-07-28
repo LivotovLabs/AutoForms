@@ -1,7 +1,5 @@
 package eu.livotov.labs.vaadin.autoforms.ann;
 
-import eu.livotov.labs.vaadin.autoforms.api.FormFieldType;
-
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
@@ -20,19 +18,13 @@ import java.lang.annotation.Target;
  */
 @Retention(RetentionPolicy.RUNTIME)
 @Target(ElementType.FIELD)
-public @interface FormField
+public @interface DecimalTypeOptions
 {
 
-    public abstract String title() default "#field";
-    public abstract String hint() default "";
-    public abstract String description() default "";
-    public abstract boolean required() default false;
-    public abstract String location();
-    public abstract String width() default "100%";
-    public abstract String height() default "";
-    public abstract boolean visible() default true;
-    public abstract FormFieldType type() default FormFieldType.Auto;
-    public abstract String requiredFieldErrorMessage() default "";
+    public abstract double min() default Double.MIN_VALUE;
+    public abstract double max() default Double.MAX_VALUE;
+    public abstract String validationMinimumErrorMessage() default "";
+    public abstract String validationMaximumErrorMessage() default "";
 
 
 }

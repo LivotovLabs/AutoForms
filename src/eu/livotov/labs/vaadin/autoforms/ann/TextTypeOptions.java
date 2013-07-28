@@ -20,19 +20,16 @@ import java.lang.annotation.Target;
  */
 @Retention(RetentionPolicy.RUNTIME)
 @Target(ElementType.FIELD)
-public @interface FormField
+public @interface TextTypeOptions
 {
 
-    public abstract String title() default "#field";
-    public abstract String hint() default "";
-    public abstract String description() default "";
-    public abstract boolean required() default false;
-    public abstract String location();
-    public abstract String width() default "100%";
-    public abstract String height() default "";
-    public abstract boolean visible() default true;
-    public abstract FormFieldType type() default FormFieldType.Auto;
-    public abstract String requiredFieldErrorMessage() default "";
+    public abstract int min() default 0;
+    public abstract int max() default 100;
+    public abstract boolean multiline() default false;
+    public abstract int lines() default 5;
+    public abstract boolean password() default false;
+    public abstract String validationRegexp() default "";
+    public abstract String validationErrorMessage() default "";
 
 
 }

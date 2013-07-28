@@ -7,18 +7,12 @@ package eu.livotov.labs.vaadin.autoforms.api;
 public enum FormFieldType
 {
     Auto,
-    Collection,
     Text,
-    TextEmail,
-    TextUrl,
-    TextPassword,
-    Numeric,
-    NumericPositive,
-    NumericNegative,
-    NumericAge,
-    Double,
+    Integer,
+    Decimal,
     Date,
     Boolean,
-    Custom
+    List,
+    MultiList
 
 }
