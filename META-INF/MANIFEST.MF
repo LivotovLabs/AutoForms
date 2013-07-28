@@ -1,0 +1,9 @@
+Manifest-Version: 1.0
+Vaadin-License-Title: Apache 2.0
+Implementation-Vendor: Livotov Labs Ltd.
+Implementation-Title: Auto Forms
+Implementation-Version: %VERSION%
+Vaadin-Package-Version: 1
+Created-By: 1.6.0_24 (Apple Inc.)
+Vaadin-Addon: %ADDON%
+

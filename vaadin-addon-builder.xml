@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="AutoForms Vaddin Addon" default="build">
+
+    <property file="local.properties" />
+    <property file="version.properties" />
+    <property file="build.properties" />
+
+    <path id="master-classpath">
+        <fileset dir="lib">
+            <include name="*.jar"/>
+        </fileset>
+    </path>
+
+    <target name="build" depends="clean,compile">
+        <copy file="${addon.manifest}" todir="${addon.dir}/META-INF" />
+        <copy file="${addon.jar}" tofile="${addon.dir}/${addon.name}-${addon.version}/${addon.name}-${addon.version}.jar" />
+
+        <jar file="${addon.output}/vaadin-${addon.name}-${addon.version}.zip" manifest="${addon.manifest}">
+            <fileset dir="${addon.dir}" />
+        </jar>
+    </target>
+
+    <target name="clean">
+        <delete dir="${addon.dir}" includeemptydirs="true"/>
+        <delete dir="${addon.compile.dir}" includeemptydirs=""/>
+        <delete file="${addon.manifest}"/>
+        <mkdir dir="out"/>
+        <mkdir dir="${addon.compile.dir}" />
+        <mkdir dir="${addon.dir}" />
+        <mkdir dir="${addon.dir}/META-INF" />
+        <mkdir dir="${addon.dir}/${addon.name}-${addon.version}" />
+
+        <copy file="META-INF/MANIFEST.MF" tofile="${addon.manifest}" />
+        <replace file="${addon.manifest}" token="%ADDON%" value="${addon.name}-${addon.version}/${addon.name}-${addon.version}.jar" />
+        <replace file="${addon.manifest}" token="%VERSION%" value="${addon.version}" />
+    </target>
+
+    <target name="compile">
+        <javac srcdir="src" destdir="${addon.compile.dir}">
+            <classpath refid="master-classpath"/>
+        </javac>
+
+        <jar destfile="${addon.jar}" basedir="${addon.compile.dir}" manifest="${addon.manifest}"/>
+    </target>
+
+</project>

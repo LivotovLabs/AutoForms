@@ -8,7 +8,6 @@ import eu.livotov.labs.vaadin.autoforms.ann.FormField;
 import eu.livotov.labs.vaadin.autoforms.ann.FormBean;
 import eu.livotov.labs.vaadin.autoforms.api.AutoFormFieldFactory;
 import eu.livotov.labs.vaadin.autoforms.api.CellConstraint;
-import eu.livotov.labs.vaadin.tpt.view.TPTUIHorizontalSizer;
 
 /**
  * (c) Livotov Labs Ltd. 2012
@@ -146,7 +145,10 @@ public class AutoForm extends VerticalLayout
             uiButtonsRoot.setHeight(null);
             uiButtonsRoot.setSpacing(true);
 
-            TPTUIHorizontalSizer sizer = new TPTUIHorizontalSizer();
+            Label sizer = new Label();
+            sizer.setWidth("100%");
+            sizer.setHeight(null);
+
             uiButtonsRoot.addComponent(sizer);
 
             if (uiBtnCommit != null)

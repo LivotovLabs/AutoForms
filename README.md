@@ -4,8 +4,16 @@ AutoForms
 This pure server-side add-on goal is to let Vaadin developers build simple and complex forms almost instantly in their apps by
 just annotating POJOs, representing the actual data. This makes the actual app source code more cleaner and smaller.
 
+Form layout is build very like to desktop Java TableLayout component - provide layout table size (rows,cols) in @FormBean annotation
+and set the occupied columns/rows for each field in @FormField annotation, parameter "location".
+
 We're sorry, there are no documentation formed, please see the annotations objects as well as quick start sample below.
 As soon as we finalize and freeze the 1.0 APIs, documentation will be added.
+
+
+LICENSE
+=======
+AutoForms is absolutely free and uses version 2 of Apache License, please see LICENSE.TXT for more details.
 
 
 Status
